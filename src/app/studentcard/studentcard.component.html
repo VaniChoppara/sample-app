@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div *ngFor="let student of students">
+       <h1>Student Id : {{student.id}}</h1>
+       <p>Name: {{student.studentName}}</p>
+       <p>Age : {{student.studentAge}}</p>
+       <p>Phone No: {{student.studentPhone}}</p>
+       <p>Address:{{student.studentAddress}}</p>
+        <div [ngSwitch]="student.studentBranch">
+            Branch : <span *ngSwitchCase="1">ECE</span>
+            <span *ngSwitchCase="2">CSC</span>
+            <span *ngSwitchCase="3">EEE</span>
+            <span *ngSwitchDefault="">Non Computers</span>
+        </div>
+    </div>
+</body>
+</html>

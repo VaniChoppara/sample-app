@@ -1,0 +1,28 @@
+
+table tbody  tr td{
+    background-origin: padding-box;
+    color:blue;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid brown;
+}
+
+table thead tr th{
+    background-origin: padding-box;
+    color:red;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid brown;
+    
+}
+
+button {
+    color: white;
+    align-items: center;
+    background-color: blue;
+    padding: 10px;
+    margin-left: 250px;
+    margin-top: 10px;
+    border: 2px solid brown;
+   
+}

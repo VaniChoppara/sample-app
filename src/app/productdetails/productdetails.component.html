@@ -1,0 +1,42 @@
+<h1 style="text-align: center"> Product Details</h1>
+<div style="align-items: center; padding-left: 25%">
+  <app-productcount
+    [all]="getAllProductsCount()"
+    [laptop]="getLaptopCount()"
+    [mobile]="getMobileCount()"
+    [ac]="getAcCount()"
+    [tv]="getTvCount()"
+    (countRadioButtonSelectionChanged)="onRadioChange($event)"
+  ></app-productcount>
+  <table style="align-self: center; align-items: center; text-align: center">
+    <thead>
+      <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Expiry Date</th>
+        <th>Manufacturer</th>
+        <th>Index</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let product of products;
+          trackBy: trackByProductIndex;
+          let i = index
+        "
+      >
+        <td>{{ product.productId }}</td>
+        <td>{{ product.productName }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.expDate }}</td>
+        <td>{{ product.manufacturer }}</td>
+        <td>{{ i }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="refreshProducts()">Refresh</button>
+</div>
