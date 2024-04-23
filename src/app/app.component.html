@@ -1,2 +1,11 @@
-  <app-productdetails></app-productdetails>
+  <!-- <app-productdetails></app-productdetails> -->
+
+  <h1>Payment Gatway Screen</h1>
+
+<h2> Please Enter Credit Card Details</h2>
+<br><br>
+Card Number: <input type="text" [(ngModel)]="cardNumber" />
+
+<br>
+<img appCclogo [cardNumber]="cardNumber">
   

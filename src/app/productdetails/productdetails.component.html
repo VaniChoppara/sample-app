@@ -1,4 +1,4 @@
-<h1 style="text-align: center"> Product Details</h1>
+<h1 style="text-align: center">Product Details</h1>
 <div style="align-items: center; padding-left: 25%">
   <app-productcount
     [all]="getAllProductsCount()"
@@ -21,21 +21,22 @@
       </tr>
     </thead>
     <tbody>
-      <tr
+      <ng-container
         *ngFor="
           let product of products;
           trackBy: trackByProductIndex;
           let i = index
         "
-      >
-        <td>{{ product.productId }}</td>
-        <td>{{ product.productName }}</td>
-        <td>{{ product.price }}</td>
-        <td>{{ product.category }}</td>
-        <td>{{ product.expDate }}</td>
-        <td>{{ product.manufacturer }}</td>
-        <td>{{ i }}</td>
-      </tr>
+        ><tr *ngIf="this.radioButtonValue==product.productName || this.radioButtonValue == 'All' ">
+          <td>{{ product.productId }}</td>
+          <td>{{ product.productName }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.expDate }}</td>
+          <td>{{ product.manufacturer }}</td>
+          <td>{{ i }}</td>
+        </tr>
+      </ng-container>
     </tbody>
   </table>
   <button (click)="refreshProducts()">Refresh</button>
